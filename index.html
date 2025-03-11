@@ -17,7 +17,7 @@
 <body class="bg-gray-900">
   <!-- Navbar -->
 
-  <nav class="absolute top-0 left-0 w-full bg-transparent p-4 z-20">
+  <nav id="Home" class="absolute top-0 left-0 w-full bg-transparent p-4 z-20">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center gap-1">
@@ -27,7 +27,7 @@
 
       <!-- Navigation Links Centered -->
       <ul class="hidden md:flex space-x-6 text-white flex-1 justify-center">
-        <li><a href="home" class="hover:text-gray-300">Home</a></li>
+        <li><a href="#Home" class="hover:text-gray-300">Home</a></li>
         <li><a href="#Destinations" class="hover:text-gray-300">Destinations</a></li>
         <li><a href="#Traditions" class="hover:text-gray-300">Traditions</a></li>
         <li><a href="#Services" class="hover:text-gray-300">Services</a></li>
@@ -48,7 +48,7 @@
     </div>
 
     <!-- Search Box -->
-    <div id="search-box" class="hidden absolute top-full left-0 w-full px-1 mt-1">
+    <div id="search-box" class="search-box absolute top-full left-0 w-full px-1">
       <div class="bg-white shadow-md rounded-lg p-1 w-full max-w-4xl mx-auto transition duration-300">
         <input type="text" placeholder="Search..."
           class="outline-none px-4 py-2 w-full text-gray-700 border border-gray-300 rounded">
@@ -57,13 +57,13 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-      class="hidden md:hidden absolute top-full right-0 w-full bg-black bg-opacity-90 p-5 flex flex-col items-center space-y-2 text-white transition duration-300">
-      <a href="#" class="block py-2">Home</a>
-      <a href="#" class="block py-2">Destination</a>
-      <a href="#" class="block py-2">Traditions</a>
-      <a href="#" class="block py-2">Services</a>
-      <a href="#" class="block py-2">Gallery</a>
-      <a href="#" class="block py-2">Contact</a>
+      class="mobile-menu md:hidden absolute top-full right-0 w-full bg-black bg-opacity-75 py-[100px] flex flex-col items-center space-y-2 text-white transition duration-300">
+      <a href="#Home" class="block py-4 text-2xl">Home</a>
+      <a href="#Destinations" class="block py-4 text-2xl">Destinations</a>
+      <a href="#Traditions" class="block py-4 text-2xl">Traditions</a>
+      <a href="#Services" class="block py-4 text-2xl">Services</a>
+      <a href="#Gallery" class="block py-4 text-2xl">Gallery</a>
+      <a href="#Contact" class="block py-4 text-2xl">Contact</a>
     </div>
   </nav>
 
@@ -82,7 +82,7 @@
     <!-- Content -->
     <div class="relative z-10 flex items-center justify-center h-full text-center">
       <div class="text-white px-4">
-        <h1 class="Explore text-4xl md:text-6xl font-bold mb-6">EXPLORE UZBEKISTAN</h1>
+        <h1 class=" text-4xl md:text-6xl font-bold mb-6">EXPLORE UZBEKISTAN</h1>
         <div>
           <a href="#"
             class="bg-[#dd2242] hover:bg-opacity-50 text-white px-6 py-3 rounded-lg text-lg font-medium shadow-lg">Get
@@ -243,37 +243,46 @@
 
   <!-- Services -->
   <section id="Services" class="py-12 px-4 text-center">
-    <h2 class="text-4xl font-bold text-white">Our Services</h2>
-    <p class="mt-2 text-white">We offer various travel services to make your Uzbekistan trip unforgettable.</p>
+    <h2 class="text-4xl font-bold text-[#dd2242]">Our Services</h2>
+    <p class="mt-2 text-[#dd2242]">We offer various travel services to make your Uzbekistan trip unforgettable.</p>
 
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <div class="p-6 flex flex-col items-center bg-transparent service-card ">
-        <div class="text-5xl">🌍</div>
+        <!-- <div class="text-5xl">🌍</div> -->
+        <i class="fa-solid fa-globe text-5xl" style="color: #dd2242;"></i>
         <h3 class="mt-4 text-2xl font-semibold text-white">Travel Packages</h3>
         <p class="mt-2 text-white">Explore historical cities like Samarkand and Bukhara with our guided tours.</p>
       </div>
       <div class="p-6 flex flex-col items-center bg-transparent service-card">
-        <div class="text-5xl">🗺️</div>
+        <!-- <div class="text-5xl">🗺️</div> -->
+        <i class="text-5xl fa-solid fa-map-location-dot" style="color: #dd2242;"></i>
         <h3 class="mt-4 text-2xl font-semibold text-white">Tour Guide Services</h3>
         <p class="mt-2 text-white">Personal and group tour guides available in multiple languages.</p>
       </div>
       <div class="p-6 flex flex-col items-center bg-transparent service-card">
-        <div class="text-5xl">🚖</div>
+        <!-- <div class="text-5xl">🚖</div> -->
+        <i class="text-5xl fa-solid fa-car" style="color: #dd2242;"></i>
         <h3 class="mt-4 text-2xl font-semibold text-white">Transportation</h3>
         <p class="mt-2 text-white">Car rentals, airport transfers, and local transport services.</p>
       </div>
       <div class="p-6 flex flex-col items-center bg-transparent service-card">
-        <div class="text-5xl">🏨</div>
+        <!-- <div class="text-5xl">🏨</div> -->
+        <i class="text-5xl fa-solid fa-hotel" style="color: #dd2242;"></i>
+
         <h3 class="mt-4 text-2xl font-semibold text-white">Accommodation Booking</h3>
         <p class="mt-2 text-white">Book hotels, hostels, and traditional guesthouses.</p>
       </div>
       <div class="p-6 flex flex-col items-center bg-transparent service-card">
-        <div class="text-5xl">🛂</div>
+        <!-- <div class="text-5xl">🛂</div> -->
+        <i class="text-5xl fa-solid fa-passport" style="color: #dd2242;"></i>
+
         <h3 class="mt-4 text-2xl font-semibold text-white">Visa Assistance</h3>
         <p class="mt-2 text-white">Guidance on obtaining an Uzbekistan travel visa.</p>
       </div>
       <div class="p-6 flex flex-col items-center bg-transparent service-card">
-        <div class="text-5xl">🍽️</div>
+        <!-- <div class="text-5xl">🍽️</div> -->
+        <i class="text-5xl fa-solid fa-utensils" style="color: #dd2242;"></i>
+
         <h3 class="mt-4 text-2xl font-semibold text-white">Food & Dining</h3>
         <p class="mt-2 text-white">Taste Uzbek cuisine and join cooking masterclasses.</p>
       </div>
@@ -289,18 +298,18 @@
 
       <!-- Category Buttons -->
       <div class="flex flex-wrap justify-center gap-2 mb-6">
-        <button class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="historic">Tarixiy
-          joylar</button>
-        <button class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="nature">Tabiat
-          manzaralari</button>
-        <button class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="cities">Shaharlardan
-          lavhalar</button>
-        <button class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="food">Milliy
-          taomlar</button>
-        <button class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="culture">Odamlar va
-          madaniyat</button>
-        <button class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="markets">Mahalliy
-          bozorlar</button>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="historic">Tarixiy
+          joylar</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="nature">Tabiat
+          manzaralari</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="cities">Shaharlardan
+          lavhalar</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="food">Milliy
+          taomlar</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="culture">Odamlar va
+          madaniyat</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="markets">Mahalliy
+          bozorlar</a>
       </div>
 
       <!-- Image Gallery -->
@@ -314,8 +323,8 @@
   <!-- Contact -->
   <section id="Contact" class="bg-gray-900 text-white py-12 px-4">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold mb-4 text-center">Biz bilan bog‘laning</h2>
-      <p class="text-white mb-6 text-center">Savollaringiz bo‘lsa, biz bilan bog‘laning</p>
+      <h2 class="text-3xl font-bold mb-4 text-center">Contact Us</h2>
+      <p class="text-white mb-6 text-center">If you have any questions, please contact us.</p>
 
       <div class="flex flex-col md:flex-row items-start justify-between gap-8 h-full">
         <!-- Contact Info -->
@@ -323,7 +332,7 @@
           <div class=" p-6 flex items-center gap-4">
             <i class="fas fa-map-marker-alt text-[#dd2242] text-2xl"></i>
             <div>
-              <p class="text-white">Toshkent, O‘zbekiston</p>
+              <p class="text-white">Tashkent, Uzbekistan</p>
             </div>
           </div>
           <div class=" p-6 flex items-center gap-4">
@@ -344,22 +353,22 @@
         <div class="md:w-1/2 p-8 flex flex-col justify-center">
           <form id="contact-form">
             <div class="mb-4">
-              <label class="block text-white font-semibold">Ism</label>
-              <input type="text" class="w-full border-b-2 border-gray-500 py-2 bg-transparent" placeholder="Ismingiz"
+              <label class="block text-white font-semibold">Name</label>
+              <input type="text" class="w-full border-b-2 border-gray-500 py-2 bg-transparent" placeholder="Your name"
                 required>
             </div>
             <div class="mb-4">
               <label class="block text-white font-semibold">Email</label>
               <input type="email" class="w-full border-b-2 border-gray-500 py-2 bg-transparent"
-                placeholder="Email manzilingiz" required>
+                placeholder="Your email" required>
             </div>
             <div class="mb-4">
-              <label class="block text-white font-semibold">Xabar</label>
+              <label class="block text-white font-semibold">Message</label>
               <textarea class="w-full border-b-2 border-gray-500 py-2 bg-transparent" rows="4"
-                placeholder="Xabaringizni yozing" required></textarea>
+                placeholder="Write your message" required></textarea>
             </div>
             <button type="submit"
-              class="w-full bg-[#dd2242] text-white py-2 rounded-lg hover:bg-[#f2032b] transition">Yuborish</button>
+              class="w-full bg-[#dd2242] text-white py-2 rounded-lg hover:bg-[#f2032b] transition">Send</button>
           </form>
         </div>
       </div>

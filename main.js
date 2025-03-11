@@ -5,12 +5,12 @@ const searchBtn = document.getElementById('search-btn');
 const searchBox = document.getElementById('search-box');
 
 menuBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
+  mobileMenu.classList.toggle('mobile-menu-hidden');
   searchBox.classList.add('hidden'); // Ensure search box is hidden when menu opens
 });
 
 searchBtn.addEventListener('click', () => {
-  searchBox.classList.toggle('hidden');
+  searchBox.classList.toggle('search-box-hidden');
   mobileMenu.classList.add('hidden'); // Ensure menu is hidden when search box opens
 });
 

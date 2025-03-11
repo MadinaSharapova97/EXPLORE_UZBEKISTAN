@@ -1,3 +1,22 @@
+.search-box{
+    transform: scaleY(0);
+    /* height: 0; */
+    transition: .3s ease-in-out;
+}
+.search-box-hidden{
+    transform: scaleY(1);
+    /* height: 20px; */
+    transition: .3s ease-in-out;
+}
+.mobile-menu{
+    transform: translateX(-100%);
+    transition: 2s ;
+}
+.mobile-menu-hidden{
+    transform: translateX(0);
+    transition: 2s ;
+}
+
 
 @keyframes fadeInOut {
     0% {
@@ -13,9 +32,6 @@
     }
 }
 
-.Explore {
-    animation: fadeInOut 5s ease-in-out forwards;
-}
 
 .destination-card {
     position: relative;
