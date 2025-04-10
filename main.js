@@ -1,19 +1,53 @@
 // Mobile menu and search box
 const menuBtn = document.getElementById('menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
-const searchBtn = document.getElementById('search-btn');
-const searchBox = document.getElementById('search-box');
+const loginBtn = document.getElementById('login-btn');
+const closeLogin = document.getElementById('close-login');
+const login = document.getElementById('login');
 
 menuBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('mobile-menu-hidden');
-  searchBox.classList.add('hidden'); // Ensure search box is hidden when menu opens
+  mobileMenu.classList.remove('hidden');
+  if (mobileMenu.classList.contains('mobile-menu-hidden')) {
+    mobileMenu.classList.remove('mobile-menu-hidden',);
+    menuBtn.setAttribute("src", "./images/bars-solid (1).svg");
+  } else {
+    mobileMenu.classList.add('mobile-menu-hidden');
+    menuBtn.setAttribute("src", "./images/xmark-solid.svg");
+  }
 });
 
-searchBtn.addEventListener('click', () => {
-  searchBox.classList.toggle('search-box-hidden');
-  mobileMenu.classList.add('hidden'); // Ensure menu is hidden when search box opens
+loginBtn.addEventListener('click', () => {
+  login.classList.add('login-hidden');
+  mobileMenu.classList.remove('mobile-menu-hidden'); 
+});
+closeLogin.addEventListener('click', () => {
+  login.classList.remove('login-hidden');
 });
 
+
+
+// menuBtn.addEventListener('click', () => {
+//   // Agar hidden bo'lsa, olib tashlaymiz
+//   mobileMenu.classList.remove('hidden');
+
+//   if (mobileMenu.classList.contains('mobile-menu-hidden')) {
+//     mobileMenu.classList.remove('mobile-menu-hidden');
+//     menuBtn.setAttribute("src", "./images/bars-solid (1).svg");
+//   } else {
+//     mobileMenu.classList.add('mobile-menu-hidden');
+//     menuBtn.setAttribute("src", "./images/xmark-solid.svg");
+//   }
+// });
+
+// loginBtn.addEventListener('click', () => {
+//   login.classList.add('login-hidden');
+//   mobileMenu.classList.add('hidden'); // Login ochilsa, mobil menyuni yopamiz
+// });
+
+// closeLogin.addEventListener('click', () => {
+//   login.classList.remove('login-hidden');
+//   // Bu yerda hech narsa yozilmasa ham bo'ladi, chunki menyuni user keyin yana o'zi ochadi
+// });
 
 
 
@@ -92,7 +126,7 @@ const categories = {
   historic: [
     "./images/Shahrisabz.jpg",
     "./images/Ark.jpg",
-    "./images/Xiva.jpg"
+    "./images/Xiva.webp"
   ],
   nature: [
     "./images/boysun.jpg",
@@ -103,7 +137,7 @@ const categories = {
     "./images/city.jpg",
     "./images/city2.jpg",
     "./images/city3.jpg"],
-    food: [
+  food: [
     "./images/bread.jpg",
     "./images/culture4.jpg",
     "./images/culture6.jpg",
@@ -146,43 +180,46 @@ loadImages("historic");
 
 // Contact form
 
-document.getElementById("contact-form").addEventListener("submit", function(event) {
+document.getElementById("contact-form").addEventListener("submit", function (event) {
   event.preventDefault();
   alert("Xabaringiz yuborildi! Tez orada javob beramiz.");
   this.reset();
 });
 
 
+// Tourists
 
+const slider = document.getElementById('slider');
+const TouristSlides = document.querySelectorAll('.slide-container');
+let index = 0;
+let slidesPerView = window.innerWidth >= 768 ? 3 : 1;
 
-setInterval(nextSlide, 5000); // 5 soniyada avtomatik almashadi
-
-updateSlide();
-
-
-
-// scroll
-function animateNumber(element, maxNumber) {
-  let currentNumber = 0;
-  const increment = Math.ceil(maxNumber / 100);
-  const interval = setInterval(() => {
-    currentNumber += increment;
-    if (currentNumber >= maxNumber) {
-      currentNumber = maxNumber;
-      clearInterval(interval);
-    }
-    element.textContent = currentNumber;
-  }, 40);
+function updateSlidesPerView() {
+  slidesPerView = window.innerWidth >= 768 ? 3 : 1;
+  TouristshowSlide(index);
 }
 
-function handleScroll() {
-  document.querySelectorAll('.number').forEach(card => {
-    const rect = card.getBoundingClientRect();
-    const maxNumber = parseInt(card.getAttribute('data-max'), 10);
-    if (rect.top < window.innerHeight && rect.bottom > 0 && card.textContent === '0') {
-      animateNumber(card, maxNumber);
-    }
-  });
+function TouristshowSlide(i) {
+  slider.style.transform = `translateX(-${i * (100 / slidesPerView)}%)`;
 }
 
-window.addEventListener('scroll', handleScroll);
+document.getElementById('next').addEventListener('click', () => {
+  if (index < TouristSlides.length - slidesPerView) {
+    index++;
+    TouristshowSlide(index);
+  }
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+  if (index > 0) {
+    index--;
+    TouristshowSlide(index);
+  }
+});
+
+window.addEventListener('resize', updateSlidesPerView);
+
+
+
+
+

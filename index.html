@@ -36,28 +36,48 @@
 
       </ul>
 
-      <!-- Search Icon Right-Aligned -->
+      <!-- Login and Menu Icons Right-Aligned -->
       <div class="flex items-center">
-        <button id="search-btn" class="text-white text-2xl">
-          <img src="./images/Logo.svg" alt="Search" class="w-6 h-6">
+        <button id="login-btn" class="text-white text-2xl">
+          <i class="fa-solid fa-user"></i>
         </button>
 
         <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden text-white text-2xl ml-4">☰</button>
+        <img src="./images/bars-solid (1).svg" id="menu-btn" class="md:hidden text-white text-2xl ml-4 px-2" alt="menu" style="color: white;">
       </div>
     </div>
 
-    <!-- Search Box -->
-    <div id="search-box" class="search-box absolute top-full left-0 w-full px-1">
-      <div class="bg-white shadow-md rounded-lg p-1 w-full max-w-4xl mx-auto transition duration-300">
-        <input type="text" placeholder="Search..."
-          class="outline-none px-4 py-2 w-full text-gray-700 border border-gray-300 rounded">
+    <!-- Login -->
+    <div id="login" class="login-box absolute  top-0 left-0 w-full h-screen bg-black bg-opacity-75 ">
+      <i id="close-login" class="fa-solid fa-xmark absolute top-20 right-40 md:right-70 text-5xl"
+        style="color: white;cursor: pointer;"></i>
+      <div
+        class="bg-white absolute rounded-lg p-3 top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-full max-w-96">
+        <div>
+          <h3 class="text-gray-700 text-2xl text-center text-bold mb-3">Login</h3>
+          <input type="email" placeholder="Email"
+            class="outline-none px-4 py-2 w-full text-gray-700 border border-gray-300 rounded mb-2">
+          <input type="password" placeholder="Password"
+            class="outline-none px-4 py-2 w-full text-gray-700 border border-gray-300 rounded mb-2">
+          <div class="flex items-center space-x-2 mb-2">
+            <input type="checkbox">
+            <label for="" class="text-gray-700">Remember me</label>
+          </div>
+          <button type="submit"
+            class="w-full bg-[#dd2242] p-2 text-bold text-white rounded mb-2 hover:bg-[#ff667f] border-none">Login
+            Now</button>
+          <a href="#" class="text-gray-700 hover:text-gray-700 my-2">Forget Password? <span
+              class="text-[#dd2242] hover:text-[#ff667f]">Click here</span> </a> <br>
+          <a href="#" class="text-gray-700 hover:text-gray-700 my-2">Don't Have An Account? <span
+              class="text-[#dd2242] hover:text-[#ff667f]">Register Now</span> </a>
+        </div>
+
       </div>
     </div>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu"
-      class="mobile-menu md:hidden absolute top-full right-0 w-full bg-black bg-opacity-75 py-[100px] flex flex-col items-center space-y-2 text-white transition duration-300">
+      class="mobile-menu absolute top-full right-0 w-full bg-black bg-opacity-75 py-[100px] flex flex-col items-center space-y-2 text-white transition duration-300">
       <a href="#Home" class="block py-4 text-2xl">Home</a>
       <a href="#Destinations" class="block py-4 text-2xl">Destinations</a>
       <a href="#Traditions" class="block py-4 text-2xl">Traditions</a>
@@ -67,11 +87,9 @@
     </div>
   </nav>
 
-
-
   <!-- Background Video -->
   <div class="relative h-screen overflow-hidden">
-    <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover">
+    <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
       <source src="./videos/UZBEKISTAN.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -92,13 +110,14 @@
     </div>
   </div>
 
+
   <!-- Popular Destionations -->
   <section id="Destinations" class="max-w-7xl mx-auto px-4 py-[60px] md:py-[80px]">
     <h2 class="text-4xl font-bold text-center text-white mb-10">Popular Destinations</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <!-- Destination Card -->
       <div class="destination-card">
-        <img src="./images/tashkent.jpg" alt="Paris" class="w-full h-full object-cover">
+        <img src="./images/tashkent.webp" alt="Paris" class="w-full h-full object-cover">
         <div class="overlay">
           <h3 class="text-white text-2xl font-bold mb-2">Tashkent</h3>
           <button class="learn-more">Learn More</button>
@@ -106,7 +125,7 @@
       </div>
 
       <div class="destination-card">
-        <img src="./images/Buxoro.jpg" alt="New York" class="w-full h-full object-cover">
+        <img src="./images/Buxoro.webp" alt="New York" class="w-full h-full object-cover">
         <div class="overlay">
           <h3 class="text-white text-2xl font-bold mb-2">Bukhara</h3>
           <button class="learn-more">Learn More</button>
@@ -114,7 +133,7 @@
       </div>
 
       <div class="destination-card">
-        <img src="./images/samarkand.png" alt="Tokyo" class="w-full h-full object-cover">
+        <img src="./images/samarkand.webp" alt="Tokyo" class="w-full h-full object-cover">
         <div class="overlay">
           <h3 class="text-white text-2xl font-bold mb-2">Samarkand</h3>
           <button class="learn-more">Learn More</button>
@@ -122,7 +141,7 @@
       </div>
 
       <div class="destination-card">
-        <img src="./images/Xiva.jpg" alt="London" class="w-full h-full object-cover">
+        <img src="./images/Xiva.webp" alt="London" class="w-full h-full object-cover">
         <div class="overlay">
           <h3 class="text-white text-2xl font-bold mb-2">Khiva</h3>
           <button class="learn-more">Learn More</button>
@@ -130,7 +149,7 @@
       </div>
 
       <div class="destination-card">
-        <img src="./images/chotqol.jpg" alt="Sydney" class="w-full h-full object-cover">
+        <img src="./images/chotqol.webp" alt="Sydney" class="w-full h-full object-cover">
         <div class="overlay">
           <h3 class="text-white text-2xl font-bold mb-2">Chotkal mountains</h3>
           <button class="learn-more">Learn More</button>
@@ -138,7 +157,7 @@
       </div>
 
       <div class="destination-card">
-        <img src="./images/karakalpakstan.jpg" alt="Rome" class="w-full h-full object-cover">
+        <img src="./images/karakalpakstan.webp" alt="Rome" class="w-full h-full object-cover">
         <div class="overlay">
           <h3 class="text-white text-2xl font-bold mb-2">Karakalpakstan</h3>
           <button class="learn-more">Learn More</button>
@@ -146,7 +165,7 @@
       </div>
 
       <div class="destination-card">
-        <img src="./images/chimyon.jpg" alt="Dubai" class="w-full h-full object-cover">
+        <img src="./images/chimyon.webp" alt="Dubai" class="w-full h-full object-cover">
         <div class="overlay">
           <h3 class="text-white text-2xl font-bold mb-2">Chimyan mountains</h3>
           <button class="learn-more">Learn More</button>
@@ -154,7 +173,7 @@
       </div>
 
       <div class="destination-card">
-        <img src="./images/fargona.jpg" alt="Singapore" class="w-full h-full object-cover">
+        <img src="./images/fargona.webp" alt="Singapore" class="w-full h-full object-cover">
         <div class="overlay">
           <h3 class="text-white text-2xl font-bold mb-2">Ferghana</h3>
           <button class="learn-more">Learn More</button>
@@ -170,7 +189,7 @@
       <div id="carousel-items" class="w-full h-full flex transition-transform duration-700 ease-in-out">
         <!-- Slide 1 -->
         <div class="w-full h-full flex-shrink-0 relative bg-cover bg-center "
-          style="background-image: url('./images/navruz1\ \(1\).jpg');">
+          style="background-image: url('./images/navruz1\ \(1\).webp');">
           <div class="absolute inset-0 flex items-center">
             <div class="gradient relative w-full h-screen px-6 text-white flex items-center justify-start ">
               <!-- Overlay -->
@@ -186,7 +205,7 @@
         </div>
         <!-- Slide 2 -->
         <div class="w-full h-full flex-shrink-0 relative bg-cover bg-center "
-          style="background-image: url('./images/culture12.jpg');">
+          style="background-image: url('./images/culture12.webp');">
           <div class="absolute inset-0 flex items-center">
             <div class="gradient relative w-full h-screen px-6 text-white flex items-center justify-start ">
               <!-- Overlay -->
@@ -202,7 +221,7 @@
         </div>
         <!-- Slide 3 -->
         <div class="w-full h-full flex-shrink-0 relative bg-cover bg-center "
-          style="background-image: url('./images/culture14.jpg');">
+          style="background-image: url('./images/culture14.webp');">
           <div class="absolute inset-0 flex items-center">
             <div class="gradient relative w-full h-screen px-6 text-white flex items-center justify-start ">
               <!-- Overlay -->
@@ -218,7 +237,7 @@
         </div>
         <!-- Slide 4 -->
         <div class="w-full h-full flex-shrink-0 relative bg-cover bg-center "
-          style="background-image: url('./images/UzbekFood.jpg');">
+          style="background-image: url('./images/UzbekFood.webp');">
           <div class="absolute inset-0 flex items-center">
             <div class="gradient relative w-full h-screen px-6 text-white flex items-center justify-start ">
               <!-- Overlay -->
@@ -298,18 +317,14 @@
 
       <!-- Category Buttons -->
       <div class="flex flex-wrap justify-center gap-2 mb-6">
-        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="historic">Tarixiy
-          joylar</a>
-        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="nature">Tabiat
-          manzaralari</a>
-        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="cities">Shaharlardan
-          lavhalar</a>
-        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="food">Milliy
-          taomlar</a>
-        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="culture">Odamlar va
-          madaniyat</a>
-        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="markets">Mahalliy
-          bozorlar</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="historic">Historical
+          places</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="nature">Nature scenes</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="cities">Cities</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="food">National dishes</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="culture">People and
+          Culture</a>
+        <a class="category-btn px-4 py-2 text-gray-800 font-bold glry-btn" data-category="markets">Local markets</a>
       </div>
 
       <!-- Image Gallery -->
@@ -318,6 +333,60 @@
       </div>
     </div>
   </section>
+
+  <!-- Tourists -->
+  <section class="bg-gray-200 py-12 pb-20">
+    <div class="max-w-6xl mx-auto  px-4 bg-gray-200">
+      <h2 class="text-3xl font-bold text-center mb-20">What Tourists Say About Uzbekistan</h2>
+      <div class="relative slider-wrapper">
+        <div id="slider" class="slider space-x-4">
+          <div class="slide-container p-6 bg-white rounded-lg shadow-md">
+            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Emma"
+              class="w-16 h-16 rounded-full mx-auto mb-4">
+            <p class="text-lg italic">"Uzbekistan is a hidden gem! The architecture and culture are breathtaking."</p>
+            <h4 class="mt-4 font-semibold text-center">- Emma, UK</h4>
+          </div>
+          <div class="slide-container p-6 bg-white rounded-lg shadow-md">
+            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Alex"
+              class="w-16 h-16 rounded-full mx-auto mb-4">
+            <p class="text-lg italic">"Samarkand and Bukhara felt like stepping into a fairy tale. Highly recommend!"
+            </p>
+            <h4 class="mt-4 font-semibold text-center">- Alex, USA</h4>
+          </div>
+          <div class="slide-container p-6 bg-white rounded-lg shadow-md">
+            <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Sofia"
+              class="w-16 h-16 rounded-full mx-auto mb-4">
+            <p class="text-lg italic">"The people here are so hospitable! I had the best experience exploring the Silk
+              Road cities."</p>
+            <h4 class="mt-4 font-semibold text-center">- Sofia, Germany</h4>
+          </div>
+          <div class="slide-container p-6 bg-white rounded-lg shadow-md">
+            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Liam"
+              class="w-16 h-16 rounded-full mx-auto mb-4">
+            <p class="text-lg italic">"The food in Uzbekistan is amazing! Plov is a must-try dish."</p>
+            <h4 class="mt-4 font-semibold text-center">- Liam, Canada</h4>
+          </div>
+          <div class="slide-container p-6 bg-white rounded-lg shadow-md">
+            <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Olivia"
+              class="w-16 h-16 rounded-full mx-auto mb-4">
+            <p class="text-lg italic">"Tashkent is such a modern yet historical city! Loved it."</p>
+            <h4 class="mt-4 font-semibold text-center">- Olivia, Australia</h4>
+          </div>
+          <div class="slide-container p-6 bg-white rounded-lg shadow-md">
+            <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Noah"
+              class="w-16 h-16 rounded-full mx-auto mb-4">
+            <p class="text-lg italic">"The deserts and mountains are so beautiful! A unique experience."</p>
+            <h4 class="mt-4 font-semibold text-center">- Noah, France</h4>
+          </div>
+        </div>
+        <button id="prev"
+          class="absolute top-1/2 left-0 transform -translate-y-1/2 p-3 bg-gray-800 text-white rounded-full">&#10094;</button>
+        <button id="next"
+          class="absolute top-1/2 right-0 transform -translate-y-1/2 p-3 bg-gray-800 text-white rounded-full">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
 
 
   <!-- Contact -->
@@ -359,8 +428,8 @@
             </div>
             <div class="mb-4">
               <label class="block text-white font-semibold">Email</label>
-              <input type="email" class="w-full border-b-2 border-gray-500 py-2 bg-transparent"
-                placeholder="Your email" required>
+              <input type="email" class="w-full border-b-2 border-gray-500 py-2 bg-transparent" placeholder="Your email"
+                required>
             </div>
             <div class="mb-4">
               <label class="block text-white font-semibold">Message</label>

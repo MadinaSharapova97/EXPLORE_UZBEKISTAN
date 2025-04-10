@@ -1,20 +1,37 @@
-.search-box{
-    transform: scaleY(0);
+@media (max-width: 768px) {
+    video {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .relative {
+        background: url('/images/uzbekistan-bg.jpg') no-repeat center center/cover;
+    }
+}
+
+
+.login-box {
+    transform: translateY(-100%);
     /* height: 0; */
     transition: .3s ease-in-out;
 }
-.search-box-hidden{
-    transform: scaleY(1);
+
+.login-hidden {
+    transform: translateY(0);
     /* height: 20px; */
     transition: .3s ease-in-out;
 }
-.mobile-menu{
+
+.mobile-menu {
     transform: translateX(-100%);
-    transition: 2s ;
+    transition: 2s;
+    z-index: 1000;
 }
-.mobile-menu-hidden{
+
+.mobile-menu-hidden {
     transform: translateX(0);
-    transition: 2s ;
+    transition: 2s;
 }
 
 
@@ -125,7 +142,8 @@
 
 /* traditions */
 .title,
-.button, .title2 {
+.button,
+.title2 {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
@@ -136,6 +154,7 @@
     transform: translateY(0);
     transition: opacity 1s ease, transform 1s ease;
 }
+
 .active .title2 {
     opacity: 1;
     transform: translateY(0);
@@ -158,26 +177,33 @@
     position: relative;
     transition: .5s;
 }
-.service-card::before,.service-card::after {
+
+.service-card::before,
+.service-card::after {
     content: '';
     position: absolute;
     width: 0;
     height: 3px;
-    background-color:#dd2242;
+    background-color: #dd2242;
     transition: 0.5s ease-in-out;
 }
-.service-card::after{
+
+.service-card::after {
     left: 0;
     bottom: -10px;
 }
-.service-card::before{
+
+.service-card::before {
     right: 0;
     top: -10px;
 }
-.service-card:hover::before,.service-card:hover::after{
+
+.service-card:hover::before,
+.service-card:hover::after {
     width: 100%;
 }
-.service-card:hover > h3{
+
+.service-card:hover>h3 {
     color: #dd2242;
 }
 
@@ -188,30 +214,56 @@
     opacity: 0;
     transform: scale(0.95);
 }
+
 .fade-enter-active {
     opacity: 1;
     transform: scale(1);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-.glry-btn{
+
+.glry-btn {
     position: relative;
-    transition: .5s;  
+    transition: .5s;
 }
-.glry-btn::after{
+
+.glry-btn::after {
     content: '';
     position: absolute;
     width: 100%;
     height: 3px;
-    background-color:rgb(72, 72, 249);
-    transition: 0.5s ;
+    background-color: rgb(72, 72, 249);
+    transition: 0.5s;
     transform: scale(0);
     left: 0;
     bottom: -10px;
 }
-.glry-btn:hover::after{
+
+.glry-btn:hover::after {
     transform: scale(1);
 }
-.glry-btn:hover{
+
+.glry-btn:hover {
     color: rgb(72, 72, 249);
+    cursor: pointer;
 }
 
+/* Tourists */
+
+.slider-wrapper {
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide-container {
+    flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+    .slide-container {
+        flex: 0 0 33.3333%;
+    }
+}
